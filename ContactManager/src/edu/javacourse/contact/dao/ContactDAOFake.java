@@ -20,12 +20,10 @@ public class ContactDAOFake implements ContactDAO
 
     @Override
     public void updateContact(Contact contact) {
-
     }
 
     @Override
     public void deleteContact(Long contactId) {
-
     }
 
     @Override
