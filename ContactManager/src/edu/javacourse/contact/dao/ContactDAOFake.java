@@ -19,6 +19,16 @@ public class ContactDAOFake implements ContactDAO
     }
 
     @Override
+    public void updateContact(Contact contact) {
+
+    }
+
+    @Override
+    public void deleteContact(Long contactId) {
+
+    }
+
+    @Override
     public Contact getContact(Long contactId) {
         for(Contact c : contactList) {
             if(c.getContactId().equals(contactId)) {

@@ -22,6 +22,16 @@ public class ContactDAOFileCsv implements ContactDAO
     }
 
     @Override
+    public void updateContact(Contact contact) {
+
+    }
+
+    @Override
+    public void deleteContact(Long contactId) {
+
+    }
+
+    @Override
     public Contact getContact(Long contactId) {
         List<Contact> contacts = loadContacts();
         for(Contact con : contacts) {
