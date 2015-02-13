@@ -20,9 +20,6 @@ public class ContactTester
         System.out.println(c1);
 
         List<Contact> list = cm.findContacts(null);
-        if(list.size()!=1) {
-            System.out.println("Error");
-        }
         for(Contact ci : list) {
             System.out.println(ci);
         }
