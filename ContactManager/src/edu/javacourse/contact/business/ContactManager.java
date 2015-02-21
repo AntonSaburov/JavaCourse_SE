@@ -27,6 +27,7 @@ public class ContactManager
     }
 
     public void updateContact(Contact contact) {
+        dao.updateContact(contact);
     }
 
     public void deleteContact(Long contactId) {

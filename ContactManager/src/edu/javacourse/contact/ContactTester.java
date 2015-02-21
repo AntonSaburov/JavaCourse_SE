@@ -11,18 +11,18 @@ public class ContactTester
     public static void main(String[] args) throws ContactBusinessException {
         ContactManager cm = new ContactManager();
 
-        Contact c = createContact();
-
-        Long id = cm.addContact(c);
-        System.out.println(id);
-
-        Contact c1 = cm.getContact(id);
-        System.out.println(c1);
+        Contact nc = createContact();
+        cm.addContact(nc);
+        System.out.println(nc.getContactId());
 
         List<Contact> list = cm.findContacts(null);
         for(Contact ci : list) {
             System.out.println(ci);
         }
+
+        Contact c = list.get(0);
+        c.setEmail("ivan@google.com");
+        cm.updateContact(c);
     }
 
     public static Contact createContact() {
