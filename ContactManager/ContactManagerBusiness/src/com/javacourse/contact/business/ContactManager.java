@@ -1,11 +1,11 @@
-package edu.javacourse.contact.business;
+package com.javacourse.contact.business;
 
-import edu.javacourse.contact.dao.ContactDAO;
-import edu.javacourse.contact.dao.ContactDAOFactory;
-import edu.javacourse.contact.entity.Contact;
-import edu.javacourse.contact.exception.ContactBusinessException;
-import edu.javacourse.contact.exception.ContactDAOException;
-import edu.javacourse.contact.filter.ContactFilter;
+import com.javacourse.contact.dao.ContactDAO;
+import com.javacourse.contact.dao.ContactDAOFactory;
+import com.javacourse.contact.entity.Contact;
+import com.javacourse.contact.exception.ContactBusinessException;
+import com.javacourse.contact.exception.ContactDAOException;
+import com.javacourse.contact.filter.ContactFilter;
 
 import java.util.List;
 

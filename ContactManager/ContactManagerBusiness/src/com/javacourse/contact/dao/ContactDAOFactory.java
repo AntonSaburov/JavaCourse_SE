@@ -1,4 +1,4 @@
-package edu.javacourse.contact.dao;
+package com.javacourse.contact.dao;
 
 import java.util.PropertyResourceBundle;
 

@@ -1,4 +1,4 @@
-package edu.javacourse.contact.entity;
+package com.javacourse.contact.entity;
 
 import java.io.Serializable;
 

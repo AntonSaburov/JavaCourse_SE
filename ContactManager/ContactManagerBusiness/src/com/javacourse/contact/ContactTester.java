@@ -1,8 +1,8 @@
-package edu.javacourse.contact;
+package com.javacourse.contact;
 
-import edu.javacourse.contact.business.ContactManager;
-import edu.javacourse.contact.entity.Contact;
-import edu.javacourse.contact.exception.ContactBusinessException;
+import com.javacourse.contact.business.ContactManager;
+import com.javacourse.contact.entity.Contact;
+import com.javacourse.contact.exception.ContactBusinessException;
 
 import java.util.List;
 

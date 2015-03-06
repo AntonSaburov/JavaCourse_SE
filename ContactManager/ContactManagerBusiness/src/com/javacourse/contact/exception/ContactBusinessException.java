@@ -1,4 +1,4 @@
-package edu.javacourse.contact.exception;
+package com.javacourse.contact.exception;
 
 public class ContactBusinessException extends ContactException
 {

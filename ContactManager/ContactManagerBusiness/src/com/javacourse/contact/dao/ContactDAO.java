@@ -1,8 +1,8 @@
-package edu.javacourse.contact.dao;
+package com.javacourse.contact.dao;
 
-import edu.javacourse.contact.entity.Contact;
-import edu.javacourse.contact.exception.ContactDAOException;
-import edu.javacourse.contact.filter.ContactFilter;
+import com.javacourse.contact.entity.Contact;
+import com.javacourse.contact.exception.ContactDAOException;
+import com.javacourse.contact.filter.ContactFilter;
 
 import java.util.List;
 

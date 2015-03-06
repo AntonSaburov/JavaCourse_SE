@@ -1,15 +1,15 @@
-package edu.javacourse.contact.dao;
+package com.javacourse.contact.dao;
 
-import edu.javacourse.contact.entity.Contact;
-import edu.javacourse.contact.exception.ContactDAOException;
-import edu.javacourse.contact.filter.ContactFilter;
+import com.javacourse.contact.entity.Contact;
+import com.javacourse.contact.exception.ContactDAOException;
+import com.javacourse.contact.filter.ContactFilter;
 
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ContactDAOFileSrl implements ContactDAO {
-    private static final String FILE_NAME = "contact.srl";
+    private static final String FILE_NAME = "com.contact.srl";
 
     @Override
     public Long addContact(Contact contact) throws ContactDAOException {
