@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/DataSourceJNDI">
+    <Resource
+      name="regionDS"
+      type="javax.sql.DataSource"
+      username="postgres"
+      password="postgres"
+      driverClassName="org.postgresql.Driver"
+      maxIdle="2"
+      maxWait="5000"
+      validationQuery="SELECT 1"
+      url="jdbc:postgresql://127.0.0.1:5432/jvacourse"
+      maxActive="4"/>
+</Context>

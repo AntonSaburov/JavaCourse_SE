@@ -4,6 +4,10 @@ import com.javacourse.contact.entity.Contact;
 import com.javacourse.contact.exception.ContactDAOException;
 import com.javacourse.contact.filter.ContactFilter;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,17 +18,26 @@ public class ContactDAODb implements ContactDAO
     private static final String INSERT = "INSERT INTO cm_contact (sur_name, given_name, email, phone) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE cm_contact SET sur_name=?, given_name=?, email=?, phone=? WHERE contact_id=?";
 
-    static {
-        try {
-            Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    static {
+//        try {
+//            Class.forName("org.postgresql.Driver");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private Connection getConnection() throws SQLException {
-        String url = "jdbc:postgresql://localhost:5432/jvacourse";
-        return DriverManager.getConnection(url, "postgres", "postgres");
+//        String url = "jdbc:postgresql://localhost:5432/jvacourse";
+//        return DriverManager.getConnection(url, "postgres", "postgres");
+        try {
+            Context ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/regionDS");
+//            DataSource dataSource = (DataSource) ctx.lookup("jdbc/regionDS");
+            Connection con = dataSource.getConnection();
+            return con;
+        } catch (NamingException e) {
+            throw new SQLException(e);
+        }
     }
 
     @Override

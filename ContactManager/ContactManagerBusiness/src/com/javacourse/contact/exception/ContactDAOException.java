@@ -1,7 +1,6 @@
 package com.javacourse.contact.exception;
 
-public class ContactDAOException extends ContactException
-{
+public class ContactDAOException extends ContactException {
     public ContactDAOException() {
     }
 
@@ -17,7 +16,4 @@ public class ContactDAOException extends ContactException
         super(cause);
     }
 
-    public ContactDAOException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

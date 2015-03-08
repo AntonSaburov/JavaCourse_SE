@@ -17,7 +17,4 @@ public class ContactBusinessException extends ContactException
         super(cause);
     }
 
-    public ContactBusinessException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }
