@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/DataSourceJNDI">
+
     <Resource
       name="regionDS"
       type="javax.sql.DataSource"
@@ -11,4 +12,5 @@
       validationQuery="SELECT 1"
       url="jdbc:postgresql://127.0.0.1:5432/jvacourse"
       maxActive="4"/>
+
 </Context>
