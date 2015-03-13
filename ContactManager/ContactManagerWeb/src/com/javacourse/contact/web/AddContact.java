@@ -17,7 +17,7 @@ public class AddContact extends HttpServlet
 
     @Override
     public void init() throws ServletException {
-        contactManager = new ContactManager();
+        contactManager = ContactManager.getInstance();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +25,11 @@ public class AddContact extends HttpServlet
 
         Contact contact = createContact(request);
         try {
-            contactManager.addContact(contact);
+            if(contact.getContactId()==null) {
+                contactManager.addContact(contact);
+            } else {
+                contactManager.updateContact(contact);
+            }
             response.sendRedirect("list");
         } catch (ContactBusinessException e) {
             e.printStackTrace();
@@ -33,11 +37,17 @@ public class AddContact extends HttpServlet
     }
 
     private Contact createContact(HttpServletRequest request) {
+        String cntId = request.getParameter("contactId");
+        Long contactId = null;
+        if(cntId !=null && !cntId.trim().isEmpty()) {
+            contactId = Long.parseLong(cntId);
+        }
         String surName = request.getParameter("surName");
         String givenName = request.getParameter("givenName");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         Contact cnt = new Contact();
+        cnt.setContactId(contactId);
         cnt.setSurName(surName);
         cnt.setGivenName(givenName);
         cnt.setEmail(email);

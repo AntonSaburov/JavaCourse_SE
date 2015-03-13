@@ -11,10 +11,19 @@ import java.util.List;
 
 public class ContactManager
 {
+    private static ContactManager instance;
+
     private ContactDAO dao;
 
-    public ContactManager() {
+    private ContactManager() {
         dao = ContactDAOFactory.getDAO();
+    }
+
+    public synchronized static ContactManager getInstance() {
+        if(instance == null) {
+           instance = new ContactManager();
+        }
+        return instance;
     }
 
     public Long addContact(Contact contact) throws ContactBusinessException {
@@ -31,6 +40,7 @@ public class ContactManager
     }
 
     public void deleteContact(Long contactId) {
+        dao.deleteContact(contactId);
     }
 
     public Contact getContact(Long contactId) {

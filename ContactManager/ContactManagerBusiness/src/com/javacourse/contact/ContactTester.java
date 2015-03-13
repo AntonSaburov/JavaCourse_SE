@@ -9,7 +9,7 @@ import java.util.List;
 public class ContactTester
 {
     public static void main(String[] args) throws ContactBusinessException {
-        ContactManager cm = new ContactManager();
+        ContactManager cm = ContactManager.getInstance();
 
         Contact nc = createContact();
         cm.addContact(nc);
