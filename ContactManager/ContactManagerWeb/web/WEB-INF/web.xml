@@ -12,6 +12,14 @@
         <servlet-name>AddContact</servlet-name>
         <servlet-class>com.javacourse.contact.web.AddContact</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteContact</servlet-name>
+        <servlet-class>com.javacourse.contact.web.DeleteContact</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetContact</servlet-name>
+        <servlet-class>com.javacourse.contact.web.GetContact</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>ContactList</servlet-name>
@@ -20,6 +28,14 @@
     <servlet-mapping>
         <servlet-name>AddContact</servlet-name>
         <url-pattern>/addContact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteContact</servlet-name>
+        <url-pattern>/deleteContact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetContact</servlet-name>
+        <url-pattern>/getContact</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

@@ -17,33 +17,35 @@
 <c:set var="list" value="${CONTACT_LIST}"/>
 
 <table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Фамилия</th>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+    </thead>
     <c:forEach var="contact" items="${list}" varStatus="status">
-
-        <c:url var="groupUrl" value="GoTo">
-            <c:param name="contactId1" value="${contact.surName}"/>
-            <c:param name="contactId2" value="${contact.givenName}"/>
-            <c:param name="contactId3" value="${contact.email}"/>
+        <c:url var="delete" value="deleteContact">
+            <c:param name="contactId" value="${contact.contactId}"/>
         </c:url>
-
-        <c:choose>
-            <c:when test="${status.count%2==0}">
-                <tr bgcolor="#8a2be2">
-            </c:when>
-            <c:otherwise>
-                <tr bgcolor="yellow">
-            </c:otherwise>
-        </c:choose>
-                <td><a href="${groupUrl}">${status.count}</a></td>
-                <td>${contact.contactId}</td>
-                <td>${contact.surName}</td>
-                <td>${contact.givenName}</td>
-                <td>${contact.email}</td>
-                <td>${contact.phone}</td>
-            </tr>
+        <c:url var="update" value="getContact">
+            <c:param name="contactId" value="${contact.contactId}"/>
+        </c:url>
+        <tr>
+            <td><a href="${update}">${contact.contactId}</a></td>
+            <td>${contact.surName}</td>
+            <td>${contact.givenName}</td>
+            <td>${contact.email}</td>
+            <td>${contact.phone}</td>
+            <td><a href="${delete}">Delete</a></td>
+        </tr>
     </c:forEach>
 </table>
 
-<a href="add.jsp">Добавить</a>
+<a href="getContact">Добавить</a>
 
 </body>
 </html>
